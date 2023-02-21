@@ -11,5 +11,3 @@ services:
        - 3331:3306
      volumes:
        - ./db_data:/var/lib/mysql
-  
-  
