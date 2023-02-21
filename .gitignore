@@ -15,3 +15,5 @@ Cargo.lock
 /target
 
 db_data
+
+.idea
