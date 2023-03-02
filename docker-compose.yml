@@ -1,5 +1,13 @@
 version: "3.8"
 services:
+   app:
+     build: .
+     volumes:
+       - .:/app
+     working_dir: /app
+     command: cargo watch -x run
+     depends_on:
+       - db
    db:
      image: mysql:8.0
      platform: linux/x86_64
