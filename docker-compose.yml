@@ -8,6 +8,8 @@ services:
      command: cargo watch -x run
      depends_on:
        - db
+     ports:
+       - 7878:7878
    db:
      image: mysql:8.0
      platform: linux/x86_64
