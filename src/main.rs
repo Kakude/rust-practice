@@ -9,7 +9,11 @@ use std::env;
 
 
 fn main() {
-    let listener = TcpListener::bind("0.0.0.0:7878").unwrap();
+    dotenv().ok();
+
+    let url = env::var("URL").expect("URL must be set");
+
+    let listener = TcpListener::bind(&url).unwrap();
 
     for stream in listener.incoming() {
         let stream = stream.unwrap();
